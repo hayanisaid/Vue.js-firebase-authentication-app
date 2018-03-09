@@ -39,7 +39,7 @@ export default {
           alert('New user created')
         }
       }).catch(error=>{
-        console.log(error.message)
+        alert(error.message)
       })
     }
     }
