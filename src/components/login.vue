@@ -18,7 +18,7 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  method:{
+  methods:{
   	login:function(){
   		this.$router.replace('HelloWorld')
   	}
