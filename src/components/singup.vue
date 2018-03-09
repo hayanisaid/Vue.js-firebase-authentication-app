@@ -36,7 +36,7 @@ export default {
     addUser:function(){
       firebase.auth().createUserWithEmailAndPassword(this.email,this.password).then(result=>{
         if (result) {
-          alert('New user created')
+          this.$router.replace('HelloWorld')
         }
       }).catch(error=>{
         alert(error.message)

@@ -17,12 +17,18 @@ Vue.config.productionTip = false
     storageBucket: "vue-firebase-a0bfc.appspot.com",
     messagingSenderId: "217439729002"
   };
+  let app;
   firebase.initializeApp(config)
+  firebase.auth().onAuthStateChanged(user=>{
+  	if(!app){
+		/* eslint-disable no-new */
+		app =new Vue({
+			el: '#app',
+			router,
+			components: { App },
+			template: '<App/>'
+		})	
+  	}
+  })
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
+
